@@ -7,3 +7,8 @@ LOCATION 'abfss://khushi@dakotasynapsedatalake.dfs.core.windows.net/dim_organiza
 TBLPROPERTIES ('delta.enableDeletionVectors' = 'false')
 AS SELECT *
 FROM dev.finance_datamart.dim_organization_external;
+
+
+--SELECT * FROM dev.finance_datamart.dim_organization_external_deletion_vectors; 
+
+--DELETE FROM dev.finance_datamart.dim_organization_external_deletion_vectors WHERE organization_key  <> 1;
