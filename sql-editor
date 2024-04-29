@@ -1,0 +1,9 @@
+CONVERT TO DELTA dev.finance_datamart.dim_organization_external;
+DROP TABLE
+dev.finance_datamart.dim_organization_external_deletion_vectors; 
+CREATE TABLE dev.finance_datamart.dim_organization_external_deletion_vectors
+USING DELTA
+LOCATION 'abfss://khushi@dakotasynapsedatalake.dfs.core.windows.net/dim_organization_external_deletion_vectors'
+TBLPROPERTIES ('delta.enableDeletionVectors' = 'false')
+AS SELECT *
+FROM dev.finance_datamart.dim_organization_external;
